@@ -20,6 +20,7 @@ while True:
             while wicket == 0:
                 Run = input("Enter what you wanna bat for this ball: ").capitalize().strip()
                 Ball = random.choice(bowler_list)
+                balls+=1
                 if Run.lower().strip() == "d":
                     Result = None
                     break
@@ -36,21 +37,20 @@ while True:
                     Score_1 += bowler_dict[Ball]
                 else:
                     print("LogicalError@1")
-                balls+=1
                 if balls%6 == 0:
                     overs += 1
                     balls = 0
                     print(f"In the end of {overs} overs, You scored {Score_1}.")
-            if Run.lower().strip() == "d":
-                break
-            Score_2 = 0
-            balls = 0
-            overs = 0
-            print("You have the following choices..\n", list(bowler_dict.values()), sep='')
-            print(f"You've scored {Score_1}.\nNow you should Bowl.\nYou should score {Score_1+1} to win the match.")
+            if Run.lower().strip() != "d":
+                Score_2 = 0
+                balls = 0
+                overs = 0
+                print("You have the following choices..\n", list(bowler_dict.values()), sep='')
+                print(f"You've scored {Score_1}.\nNow you should Bowl.\nThe Opponent should score {Score_1+1} to win the match.")
             while wicket == 1:
                 Ball = input("Enter what you wanna bowl for this ball: ").capitalize().strip()
                 Run = random.choice(bater_list)
+                balls+=1
                 if Ball.lower().strip() == "d":
                     Result = None
                     break
@@ -67,7 +67,6 @@ while True:
                     Score_2 += int(Ball)
                 else:
                     print("LogicalError@2")
-                balls+=1
                 if Score_2 > Score_1:
                     print("The match is won by the Opponent.")
                     Result = False
@@ -87,6 +86,7 @@ while True:
             while wicket == 0:
                 Ball = input("Enter what you wanna bowl for this ball: ").capitalize().strip()
                 Run = random.choice(bater_list)
+                balls+=1
                 if Ball.lower().strip() == "d":
                     Result = None
                     break
@@ -103,21 +103,20 @@ while True:
                     Score_3 += int(Ball)
                 else:
                     print("LogicalError@3")
-                balls+=1
                 if balls%6 == 0:
                     overs += 1
                     balls = 0
                     print(f"In the end of {overs} overs, The opponent scored {Score_3}.")
-            if Ball.lower().strip() == "d":
-                break
-            Score_4 = 0
-            balls = 0
-            overs = 0
-            print("You have the following choices..\n", list(bater_dict.values()), sep='')
-            print(f"The Opponent had scored {Score_3}.\nNow you should Bat.\nYou should score {Score_3+1} to win the match.")
+            if Ball.lower().strip() != "d":
+                Score_4 = 0
+                balls = 0
+                overs = 0
+                print("You have the following choices..\n", list(bater_dict.values()), sep='')
+                print(f"The Opponent had scored {Score_3}.\nNow you should Bat.\nYou should score {Score_3+1} to win the match.")
             while wicket == 1:
                 Run = input("Enter what you wanna bat for this ball: ").capitalize().strip()
                 Ball = random.choice(bowler_list)
+                balls+=1
                 if Run.lower().strip() == "d":
                     Result = None
                     break
@@ -134,7 +133,6 @@ while True:
                     Score_4 += bowler_dict[Ball]
                 else:
                     print("LogicalError@4")
-                balls+=1
                 if Score_4 > Score_3:
                     print("The match is won by the User.")
                     Result = True
@@ -157,6 +155,7 @@ while True:
         while wicket == 0:
             Run = input("Enter what you wanna bat for this ball: ").capitalize().strip()
             Ball = random.choice(bowler_list)
+            balls+=1
             if Run.lower().strip() == "d":
                     Result = None
                     break
@@ -173,22 +172,21 @@ while True:
                 Score_1 += bowler_dict[Ball]
             else:
                 print("LogicalError@6")
-            balls+=1
             if balls%6 == 0:
                 overs += 1
                 balls = 0
                 print(f"In the end of {overs} overs, You scored {Score_1}.")
-        Score_2 = 0
-        balls = 0
-        overs = 0
-        if Run.lower().strip() == "d":
-            break
-        Result = True
-        print("You have the following choices..\n", list(bowler_dict.values()), sep='')
-        print(f"You've scored {Score_1}.\nNow you should Bowl.\nYou should score {Score_1+1} to win the match.")
+        if Run.lower().strip() != "d":
+            Score_2 = 0
+            balls = 0
+            overs = 0
+            Result = True
+            print("You have the following choices..\n", list(bowler_dict.values()), sep='')
+            print(f"You've scored {Score_1}.\nNow you should Bowl.\nThe Opponent should score {Score_1+1} to win the match.")
         while wicket == 1:
             Ball = input("Enter what you wanna bowl for this ball: ").capitalize().strip()
             Run = random.choice(bater_list)
+            balls+=1
             if Ball.lower().strip() == "d":
                     Result = None
                     break
@@ -205,7 +203,6 @@ while True:
                 Score_2 += int(Ball)
             else:
                 print("LogicalError@7")
-            balls+=1
             if Score_2 > Score_1:
                 print("The match is won by the Opponent.")
                 Result = False
@@ -226,6 +223,7 @@ while True:
         while wicket == 0:
             Ball = input("Enter what you wanna bowl for this ball: ").capitalize().strip()
             Run = random.choice(bater_list)
+            balls+=1
             if Ball.lower().strip() == "d":
                     Result = None
                     break
@@ -242,22 +240,20 @@ while True:
                 Score_3 += int(Ball)
             else:
                 print("LogicalError@8")
-            balls+=1
             if balls%6 == 0:
                 overs += 1
                 balls = 0
                 print(f"In the end of {overs} overs, The opponent scored {Score_3}.")
-        if Ball.lower().strip() == "d":
-            break
-        wicket = 0
-        Score_4 = 0
-        balls = 0
-        overs = 0
-        print("You have the following choices..\n", list(bater_dict.values()), sep='')
-        print(f"The Opponent had scored {Score_3}.\nNow you should Bat.\nYou should score {Score_3+1} to win the match.")
+        if Ball.lower().strip() != "d":
+            Score_4 = 0
+            balls = 0
+            overs = 0
+            print("You have the following choices..\n", list(bater_dict.values()), sep='')
+            print(f"The Opponent had scored {Score_3}.\nNow you should Bat.\nYou should score {Score_3+1} to win the match.")
         while wicket == 1:
             Run = input("Enter what you wanna bat for this ball: ").capitalize().strip()
             Ball = random.choice(bowler_list)
+            balls+=1
             if Run.lower().strip() == "d":
                     Result = None
                     break
@@ -274,7 +270,6 @@ while True:
                 Score_4 += bowler_dict[Ball]
             else:
                 print("LogicalError@9")
-            balls+=1
             if Score_4 > Score_3:
                 print("The match is won by the User.")
                 Result = True
@@ -287,27 +282,27 @@ while True:
         print("LogicalError@10")
     print("GOOD GAME. WELL PLAYED...!!!!!")
     print("Match Summary..")
-    break
-while True:
-    if Toss:
+    if Toss and (Run != "d" and Ball != "d"):
         print(f"The user won the toss by calling {Toss_choice} and chose on {Choice_1} first.")
         if Choice_1 == "batting":
             print(f"The User chose to bat first and scored {Score_1}.")
             Difference = abs(Score_1 - Score_2)
-        elif Choice_1 == "bowling":
+        elif Choice_1 == "bowling" :
             print(f"The User chose to bowl first and let the Opponent score {Score_3} runs.")
             Difference = abs(Score_3 - Score_4)
-    else:
+    elif not Toss and (Run != "d" and Ball != "d"):
         print(f"The User lost the toss by calling {Toss_choice} and the Opponent chose on {Choice_2} first.")
         if Choice_2 == "batting":
             print(f"The Opponent chose to bat first and scored {Score_2}.")
+            Difference = abs(Score_1 - Score_2)
         elif Choice_2 == "bowling":
             print(f"The Opponent chose to bowl first and let the User score {Score_4} runs.")
+            Difference = abs(Score_3 - Score_4)
     if Result is None:
         print("\nRESULT : The match has won by the Opponent as the User Declared the Match.\n")
     elif Result is True:
-        print(f"\nRESULT : USER WON THE MATCH BY {Difference} \n")
+        print(f"\nRESULT : USER WON THE MATCH BY {Difference} RUNS.\n")
     else:
-        print(f"\nRESULT : OPPONENT WON THE MATCH BY {Difference}\n")
+        print(f"\nRESULT : OPPONENT WON THE MATCH BY {Difference} RUNS.\n")
     if input("Do you wanna play again..??(Yes/No) ").capitalize().strip() == "No":
         break
