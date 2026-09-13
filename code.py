@@ -9,6 +9,7 @@ while True:
     bater_list=list(bater_dict.keys())
     if (Toss_choice:=random.choice(Toss)) == input("Heads or Tails: ").capitalize().strip():
         Toss = True
+        print("You won the Toss..!!!")
         if Choice_1 := (input("Enter your choice. (Batting / Bowling): ").lower().strip()) == "batting":
             print(f"You had won the toss and decided on {Choice_1} first. Good Luck.")
             print("You have the following choices..\n", list(bater_dict.values()), sep='')
