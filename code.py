@@ -9,7 +9,7 @@ while True:
     bater_list=list(bater_dict.keys())
     if (Toss_choice:=random.choice(Toss)) == input("Heads or Tails: ").capitalize().strip():
         Toss = True
-        if (Choice_1 := (input("Enter your choice. (Batting / Bowling): ").lower().strip())) == "batting":
+        if Choice_1 := (input("Enter your choice. (Batting / Bowling): ").lower().strip()) == "batting":
             print(f"You had won the toss and decided on {Choice_1} first. Good Luck.")
             print("You have the following choices..\n", list(bater_dict.values()), sep='')
             Result = True
@@ -27,6 +27,7 @@ while True:
                 elif Run not in [str(i) for i in bater_dict.values()]:
                     print("Enter a valid option.")
                     balls -= 1
+                    continue
                 elif (Run != 'Stroke' and Run != str(bowler_dict[Ball])) :
                     Score_1 += int(Run)
                 elif (Run == 'Stroke' and bowler_dict[Ball] == 'Spin') or Run.lower().strip() == str(bowler_dict[Ball]) :
@@ -57,6 +58,7 @@ while True:
                 elif Ball not in [str(i) for i in bowler_dict.values()]:
                     print("Enter a valid option.")
                     balls -= 1
+                    continue
                 elif str(bater_dict[Run]) != 'Stroke' and str(bater_dict[Run]) != Ball:
                     Score_2 += int(bater_dict[Run])
                 elif (Run == 'Stroke' and Ball == 'Spin') or Ball == str(bater_dict[Run]) :
@@ -93,6 +95,7 @@ while True:
                 elif Ball not in [str(i) for i in bowler_dict.values()]:
                     print("Enter a valid option.")
                     balls -= 1
+                    continue
                 elif str(bater_dict[Run]) != 'Stroke' and str(bater_dict[Run]) != Ball:
                     Score_3 += int(bater_dict[Run])
                 elif (Run == 'Stroke' and Ball == 'Spin') or Ball == str(bater_dict[Run]) :
@@ -123,6 +126,7 @@ while True:
                 elif Run not in [str(i) for i in bater_dict.values()]:
                     print("Enter a valid option.")
                     balls -= 1
+                    continue
                 elif (Run != 'Stroke' and Run != str(bowler_dict[Ball])) :
                     Score_4 += int(Run)
                 elif (Run == 'Stroke' and bowler_dict[Ball] == 'Spin') or Run.lower().strip() == str(bowler_dict[Ball]) :
@@ -143,7 +147,7 @@ while True:
                     print(f"In the end of {overs} overs, You scored {Score_4}.")
         else:
             print("LogicalError@5")
-    elif (Choice_2 := random.choice(["Batting", "Bowling"])) == "Bowling": 
+    elif (Choice_2 := (random.choice(["Batting", "Bowling"]).lower().strip())) == "bowling": 
         Toss = False
         print(f"You had lost the toss and your Opponent has decided on {Choice_2} first. Good Luck.")
         print("You have the following choices..\n", list(bater_dict.values()), sep='')
@@ -162,6 +166,7 @@ while True:
             elif Run not in [str(i) for i in bater_dict.values()]:
                 print("Enter a valid option.")
                 balls -= 1
+                continue
             elif (Run != 'Stroke' and Run != str(bowler_dict[Ball])) :
                 Score_1 += int(Run)
             elif (Run == 'Stroke' and bowler_dict[Ball] == 'Spin') or Run.lower().strip() == str(bowler_dict[Ball]) :
@@ -193,6 +198,7 @@ while True:
             elif Ball not in [str(i) for i in bowler_dict.values()]:
                 print("Enter a valid option.")
                 balls -= 1
+                continue
             elif str(bater_dict[Run]) != 'Stroke' and str(bater_dict[Run]) != Ball:
                 Score_2 += int(bater_dict[Run])
             elif (Run == 'Stroke' and Ball == 'Spin') or Ball == str(bater_dict[Run]) :
@@ -211,7 +217,7 @@ while True:
                 overs += 1
                 balls = 0
                 print(f"In the end of {overs} overs, The opponent scored {Score_2}.")
-    elif Choice_2 == "Batting":
+    elif Choice_2 == "batting":
         Toss = False
         print(f"You had lost the toss and your Opponent has decided on {Choice_2} first. Good Luck.")
         print("You have the following choices..\n", list(bowler_dict.values()), sep='')
@@ -230,6 +236,7 @@ while True:
             elif Ball not in [str(i) for i in bowler_dict.values()]:
                 print("Enter a valid option.")
                 balls -= 1
+                continue
             elif str(bater_dict[Run]) != 'Stroke' and str(bater_dict[Run]) != Ball:
                 Score_3 += int(bater_dict[Run])
             elif (Run == 'Stroke' and Ball == 'Spin') or Ball == str(bater_dict[Run]) :
@@ -260,10 +267,11 @@ while True:
             elif Run not in [str(i) for i in bater_dict.values()]:
                 print("Enter a valid option.")
                 balls -= 1
+                continue
             elif (Run != 'Stroke' and Run != str(bowler_dict[Ball])) :
                 Score_4 += int(Run)
             elif (Run == 'Stroke' and bowler_dict[Ball] == 'Spin') or Run.lower().strip() == str(bowler_dict[Ball]) :
-                wicket = 1
+                wicket = 2
                 print("Ops, You got OUT. :( ")
                 print(f"You scored {Score_4} runs.")
             elif (Run == 'Stroke' and bowler_dict[Ball] != 'Spin'):
@@ -290,13 +298,13 @@ while True:
         elif Choice_1 == "bowling" :
             print(f"The User chose to bowl first and let the Opponent score {Score_3} runs.")
             Difference = abs(Score_3 - Score_4)
-    elif not Toss and (Run != "d" and Ball != "d"):
+    elif (not Toss) and (Run != "d" and Ball != "d"):
         print(f"The User lost the toss by calling {Toss_choice} and the Opponent chose on {Choice_2} first.")
-        if Choice_2 == "batting":
+        if Choice_2 == "bowling":
             print(f"The Opponent chose to bat first and scored {Score_2}.")
             Difference = abs(Score_1 - Score_2)
-        elif Choice_2 == "bowling":
-            print(f"The Opponent chose to bowl first and let the User score {Score_4} runs.")
+        elif Choice_2 == "batting":
+            print(f"The Opponent chose to bowl first and let the User score {Score_3} runs.")
             Difference = abs(Score_3 - Score_4)
     if Result is None:
         print("\nRESULT : The match has won by the Opponent as the User Declared the Match.\n")
