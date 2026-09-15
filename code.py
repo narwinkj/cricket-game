@@ -1,7 +1,10 @@
 import random
+from time import *
 while True:
     print("Welcome to the OG Odd or Even Game..!!!\nYou've got the honors.. Be prepared to choose..!!")
+    sleep(3)
     print("IF YOU WANT TO DECLARE THE MATCH, TYPE 'd'.")
+    sleep(2)
     Toss=["Heads", "Tails"]
     bowler_dict={"One":1, "Two":2, "Three":3, "Four":4, "Five":5, "Six":6, "Seven":7, "Eight":8, "Nine":9, "Ten":10, "Spin":"Spin"}
     bowler_list=list(bowler_dict.keys())
@@ -10,7 +13,7 @@ while True:
     if (Toss_choice:=random.choice(Toss)) == input("Heads or Tails: ").capitalize().strip():
         Toss = True
         print("You won the Toss..!!!")
-        if Choice_1 := (input("Enter your choice. (Batting / Bowling): ").lower().strip()) == "batting":
+        if (Choice_1 := (input("Enter your choice. (Batting / Bowling): ").lower().strip())) == "batting":
             print(f"You had won the toss and decided on {Choice_1} first. Good Luck.")
             print("You have the following choices..\n", list(bater_dict.values()), sep='')
             Result = True
@@ -290,28 +293,34 @@ while True:
     else:
         print("LogicalError@10")
     print("GOOD GAME. WELL PLAYED...!!!!!")
+    sleep(2)
     print("Match Summary..")
     if Toss and (Run != "d" and Ball != "d"):
         print(f"The user won the toss by calling {Toss_choice} and chose on {Choice_1} first.")
+        sleep(2)
         if Choice_1 == "batting":
             print(f"The User chose to bat first and scored {Score_1}.")
             Difference = abs(Score_1 - Score_2)
         elif Choice_1 == "bowling" :
             print(f"The User chose to bowl first and let the Opponent score {Score_3} runs.")
             Difference = abs(Score_3 - Score_4)
+        sleep(2)
     elif (not Toss) and (Run != "d" and Ball != "d"):
         print(f"The User lost the toss by calling {Toss_choice} and the Opponent chose on {Choice_2} first.")
+        sleep(2)
         if Choice_2 == "bowling":
             print(f"The Opponent chose to bat first and scored {Score_2}.")
             Difference = abs(Score_1 - Score_2)
         elif Choice_2 == "batting":
             print(f"The Opponent chose to bowl first and let the User score {Score_3} runs.")
             Difference = abs(Score_3 - Score_4)
+        sleep(2)
     if Result is None:
         print("\nRESULT : The match has won by the Opponent as the User Declared the Match.\n")
     elif Result is True:
         print(f"\nRESULT : USER WON THE MATCH BY {Difference} RUNS.\n")
     else:
         print(f"\nRESULT : OPPONENT WON THE MATCH BY {Difference} RUNS.\n")
+    sleep(3)
     if input("Do you wanna play again..??(Yes/No) ").capitalize().strip() == "No":
         break
