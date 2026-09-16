@@ -13,7 +13,7 @@ while True:
     if (Toss_choice:=random.choice(Toss)) == input("Heads or Tails: ").capitalize().strip():
         Toss = True
         print("You won the Toss..!!!")
-        if (Choice_1 := (input("Enter your choice. (Batting / Bowling): ").lower().strip())) == "batting":
+        if (Choice_1 := (input("Enter your choice. (Batting / Bowling): ").strip().lower())) == "batting":
             print(f"You had won the toss and decided on {Choice_1} first. Good Luck.")
             print("You have the following choices..\n", list(bater_dict.values()), sep='')
             Result = True
@@ -22,10 +22,10 @@ while True:
             balls = 0
             overs = 0 
             while wicket == 0:
-                Run = input("Enter what you wanna bat for this ball: ").capitalize().strip()
+                Run = input("Enter what you wanna bat for this ball: ").strip().capitalize()
                 Ball = random.choice(bowler_list)
                 balls+=1
-                if Run.lower().strip() == "d":
+                if Run == "D":
                     Result = None
                     break
                 elif Run not in [str(i) for i in bater_dict.values()]:
@@ -46,17 +46,17 @@ while True:
                     overs += 1
                     balls = 0
                     print(f"In the end of {overs} overs, You scored {Score_1}.")
-            if Run.lower().strip() != "d":
+            if Run != "D":
                 Score_2 = 0
                 balls = 0
                 overs = 0
                 print("You have the following choices..\n", list(bowler_dict.values()), sep='')
                 print(f"You've scored {Score_1}.\nNow you should Bowl.\nThe Opponent should score {Score_1+1} to win the match.")
             while wicket == 1:
-                Ball = input("Enter what you wanna bowl for this ball: ").capitalize().strip()
+                Ball = input("Enter what you wanna bowl for this ball: ").strip().capitalize()
                 Run = random.choice(bater_list)
                 balls+=1
-                if Ball.lower().strip() == "d":
+                if Ball == "D":
                     Result = None
                     break
                 elif Ball not in [str(i) for i in bowler_dict.values()]:
@@ -90,10 +90,10 @@ while True:
             balls = 0
             overs = 0
             while wicket == 0:
-                Ball = input("Enter what you wanna bowl for this ball: ").capitalize().strip()
+                Ball = input("Enter what you wanna bowl for this ball: ").strip().capitalize()
                 Run = random.choice(bater_list)
                 balls+=1
-                if Ball.lower().strip() == "d":
+                if Ball == "D":
                     Result = None
                     break
                 elif Ball not in [str(i) for i in bowler_dict.values()]:
@@ -114,17 +114,17 @@ while True:
                     overs += 1
                     balls = 0
                     print(f"In the end of {overs} overs, The opponent scored {Score_3}.")
-            if Ball.lower().strip() != "d":
+            if Ball != "D":
                 Score_4 = 0
                 balls = 0
                 overs = 0
                 print("You have the following choices..\n", list(bater_dict.values()), sep='')
                 print(f"The Opponent had scored {Score_3}.\nNow you should Bat.\nYou should score {Score_3+1} to win the match.")
             while wicket == 1:
-                Run = input("Enter what you wanna bat for this ball: ").capitalize().strip()
+                Run = input("Enter what you wanna bat for this ball: ").strip().capitalize()
                 Ball = random.choice(bowler_list)
                 balls+=1
-                if Run.lower().strip() == "d":
+                if Run == "D":
                     Result = None
                     break
                 elif Run not in [str(i) for i in bater_dict.values()]:
@@ -151,7 +151,7 @@ while True:
                     print(f"In the end of {overs} overs, You scored {Score_4}.")
         else:
             print("LogicalError@5")
-    elif (Choice_2 := (random.choice(["Batting", "Bowling"]).lower().strip())) == "bowling": 
+    elif (Choice_2 := (random.choice(["Batting", "Bowling"]).strip().lower())) == "bowling": 
         Toss = False
         print(f"You had lost the toss and your Opponent has decided on {Choice_2} first. Good Luck.")
         print("You have the following choices..\n", list(bater_dict.values()), sep='')
@@ -161,10 +161,10 @@ while True:
         balls = 0
         overs = 0 
         while wicket == 0:
-            Run = input("Enter what you wanna bat for this ball: ").capitalize().strip()
+            Run = input("Enter what you wanna bat for this ball: ").strip().capitalize()
             Ball = random.choice(bowler_list)
             balls+=1
-            if Run.lower().strip() == "d":
+            if Run == "D":
                     Result = None
                     break
             elif Run not in [str(i) for i in bater_dict.values()]:
@@ -185,7 +185,7 @@ while True:
                 overs += 1
                 balls = 0
                 print(f"In the end of {overs} overs, You scored {Score_1}.")
-        if Run.lower().strip() != "d":
+        if Run != "D":
             Score_2 = 0
             balls = 0
             overs = 0
@@ -193,10 +193,10 @@ while True:
             print("You have the following choices..\n", list(bowler_dict.values()), sep='')
             print(f"You've scored {Score_1}.\nNow you should Bowl.\nThe Opponent should score {Score_1+1} to win the match.")
         while wicket == 1:
-            Ball = input("Enter what you wanna bowl for this ball: ").capitalize().strip()
+            Ball = input("Enter what you wanna bowl for this ball: ").strip().capitalize()
             Run = random.choice(bater_list)
             balls+=1
-            if Ball.lower().strip() == "d":
+            if Ball == "D":
                     Result = None
                     break
             elif Ball not in [str(i) for i in bowler_dict.values()]:
@@ -231,10 +231,10 @@ while True:
         balls = 0
         overs = 0
         while wicket == 0:
-            Ball = input("Enter what you wanna bowl for this ball: ").capitalize().strip()
+            Ball = input("Enter what you wanna bowl for this ball: ").strip().capitalize()
             Run = random.choice(bater_list)
             balls+=1
-            if Ball.lower().strip() == "d":
+            if Ball == "D":
                     Result = None
                     break
             elif Ball not in [str(i) for i in bowler_dict.values()]:
@@ -255,17 +255,17 @@ while True:
                 overs += 1
                 balls = 0
                 print(f"In the end of {overs} overs, The opponent scored {Score_3}.")
-        if Ball.lower().strip() != "d":
+        if Ball != "D":
             Score_4 = 0
             balls = 0
             overs = 0
             print("You have the following choices..\n", list(bater_dict.values()), sep='')
             print(f"The Opponent had scored {Score_3}.\nNow you should Bat.\nYou should score {Score_3+1} to win the match.")
         while wicket == 1:
-            Run = input("Enter what you wanna bat for this ball: ").capitalize().strip()
+            Run = input("Enter what you wanna bat for this ball: ").strip().capitalize()
             Ball = random.choice(bowler_list)
             balls+=1
-            if Run.lower().strip() == "d":
+            if Run == "D":
                     Result = None
                     break
             elif Run not in [str(i) for i in bater_dict.values()]:
@@ -292,28 +292,36 @@ while True:
                 print(f"In the end of {overs} overs, You scored {Score_4}.")
     else:
         print("LogicalError@10")
-    print("GOOD GAME. WELL PLAYED...!!!!!")
+    print("WELL PLAYED. GOOD GAME..!!!!!")
     sleep(2)
     print("Match Summary..")
     if Toss and (Run != "d" and Ball != "d"):
-        print(f"The user won the toss by calling {Toss_choice} and chose on {Choice_1} first.")
+        print(f"The User won the toss by calling {Toss_choice} and chose on {Choice_1} first.")
         sleep(2)
         if Choice_1 == "batting":
             print(f"The User chose to bat first and scored {Score_1}.")
+            sleep(2)
             Difference = abs(Score_1 - Score_2)
+            print(f"The Opponent scored {Score_2}.")
         elif Choice_1 == "bowling" :
             print(f"The User chose to bowl first and let the Opponent score {Score_3} runs.")
+            sleep(2)
             Difference = abs(Score_3 - Score_4)
+            print(f"The User scored {Score_4}.")
         sleep(2)
     elif (not Toss) and (Run != "d" and Ball != "d"):
         print(f"The User lost the toss by calling {Toss_choice} and the Opponent chose on {Choice_2} first.")
         sleep(2)
         if Choice_2 == "batting":
-            print(f"The Opponent chose to bat first and scored {Score_1}.")
-            Difference = abs(Score_1 - Score_2)
-        elif Choice_2 == "bowling":
-            print(f"The Opponent chose to bowl first and let the User score {Score_3} runs.")
+            print(f"The Opponent chose to bat first and scored {Score_3}.")
+            sleep(2)
             Difference = abs(Score_3 - Score_4)
+            print(f"The User scored {Score_4}.")
+        elif Choice_2 == "bowling":
+            print(f"The Opponent chose to bowl first and let the User score {Score_1} runs.")
+            sleep(2)
+            Difference = abs(Score_1 - Score_2)
+            print(f"The Opponent scored {Score_2}.")
         sleep(2)
     if Result is None:
         print("\nRESULT : The Match has won by the Opponent as the User Declared the Match.\n")
@@ -324,5 +332,6 @@ while True:
     else:
         print(f"\nRESULT : OPPONENT WON THE MATCH BY {Difference} RUNS.\n")
     sleep(3)
+    Score_1 = Score_2 = Score_3 = Score_4 = 0
     if input("Do you wanna play again..??(Yes/No) ").capitalize().strip() == "No":
         break
