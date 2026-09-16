@@ -573,7 +573,7 @@ while True:
         print(f"The User lost the toss by calling {Toss_choice} and the Opponent chose on {Choice_2} first.")
         sleep(2)
         if Choice_2 == "bowling":
-            print(f"The Opponent chose to bat first and scored {Score_2}.")
+            print(f"The Opponent chose to bat first and scored {Score_1}.")
             Difference = abs(Score_1 - Score_2)
         elif Choice_2 == "batting":
             print(f"The Opponent chose to bowl first and let the User score {Score_3} runs.")
