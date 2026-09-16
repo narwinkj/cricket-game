@@ -2,7 +2,7 @@ import random
 from time import *
 while True:
     print("Welcome to the OG Odd or Even Game..!!!\nYou've got the honors.. Be prepared to choose..!!")
-    sleep(3)
+    sleep(2)
     print("IF YOU WANT TO DECLARE THE MATCH, TYPE 'd'.")
     sleep(2)
     Toss=["Heads", "Tails"]
@@ -316,7 +316,9 @@ while True:
             Difference = abs(Score_3 - Score_4)
         sleep(2)
     if Result is None:
-        print("\nRESULT : The match has won by the Opponent as the User Declared the Match.\n")
+        print("\nRESULT : The Match has won by the Opponent as the User Declared the Match.\n")
+    elif Result is True and Difference == 0:
+        print("\nRESULT : The Match Ended in a Draw.\n")
     elif Result is True:
         print(f"\nRESULT : USER WON THE MATCH BY {Difference} RUNS.\n")
     else:
