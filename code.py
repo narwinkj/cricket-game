@@ -295,7 +295,7 @@ while True:
     print("WELL PLAYED. GOOD GAME..!!!!!")
     sleep(2)
     print("Match Summary..")
-    if Toss and (Run != "d" and Ball != "d"):
+    if Toss and (Run != "D" and Ball != "D"):
         print(f"The User won the toss by calling {Toss_choice} and chose on {Choice_1} first.")
         sleep(2)
         if Choice_1 == "batting":
