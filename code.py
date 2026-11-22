@@ -309,7 +309,7 @@ while True:
             Difference = abs(Score_3 - Score_4)
             print(f"The User scored {Score_4}.")
         sleep(2)
-    elif (not Toss) and (Run != "d" and Ball != "d"):
+    elif (not Toss) and (Run != "D" and Ball != "D"):
         print(f"The User lost the toss by calling {Toss_choice} and the Opponent chose on {Choice_2} first.")
         sleep(2)
         if Choice_2 == "batting":
