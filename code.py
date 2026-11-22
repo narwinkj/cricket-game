@@ -134,7 +134,7 @@ while True:
                 elif (Run != 'Stroke' and Run != str(bowler_dict[Ball])) :
                     Score_4 += int(Run)
                 elif (Run == 'Stroke' and bowler_dict[Ball] == 'Spin') or Run.lower().strip() == str(bowler_dict[Ball]) :
-                    wicket = 1
+                    wicket = 2
                     print("Ops, You got OUT. :( ")
                     print(f"You scored {Score_4} runs.")
                 elif (Run == 'Stroke' and bowler_dict[Ball] != 'Spin'):
